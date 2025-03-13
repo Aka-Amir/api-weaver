@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@app/mock": "<rootDir>/../libs/mock/src",
+    "@app/mock/(.*)": "<rootDir>/../libs/mock/src/$1",
+    "@app/o": "<rootDir>/../libs/o/src",
+    "@app/o/(.*)": "<rootDir>/../libs/o/src/$1"
+  }
+}

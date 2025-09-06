@@ -5,6 +5,7 @@
   "author": "Aka-Amir",
   "private": false,
   "publisher": "Aka-Amir",
+  "homepage": "",
   "license": "MIT",
   "bin": {
     "apiva": "./dist/main.js",

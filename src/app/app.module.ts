@@ -1,8 +1,8 @@
 import { Global, Module } from '@nestjs/common';
-import { CommandsService } from './commands.service';
+import { GenerateCommand } from './commands/generate.command';
 
 @Global()
 @Module({
-  providers: [CommandsService],
+  providers: [GenerateCommand],
 })
 export class AppModule {}

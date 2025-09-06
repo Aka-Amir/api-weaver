@@ -1,13 +1,14 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { Option, Command, CommandRunner } from 'nest-commander';
-import { join } from 'path';
-import { OpenApi3 } from '../lib';
-import { GenerationOptions } from './types/options.type';
+import { Injectable } from '@nestjs/common';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
+import { Command, CommandRunner, Option } from 'nest-commander';
+import { join } from 'path';
+import { OpenApi3 } from '../../lib';
+import Logger from '../logger';
+import { GenerationOptions } from '../types/options.type';
 
 @Injectable()
 @Command({ name: 'generate', aliases: ['g', 'gen'] })
-export class CommandsService extends CommandRunner {
+export class GenerateCommand extends CommandRunner {
   async run(passedParams: string[], options: GenerationOptions): Promise<void> {
     options.outDirectory = join(process.cwd(), options.outDirectory);
     options.openApiFile = join(process.cwd(), options.openApiFile);

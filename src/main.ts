@@ -1,19 +1,11 @@
 #!/usr/bin/env node
 
-import { ConsoleLogger } from '@nestjs/common';
 import { CommandFactory } from 'nest-commander';
 import { join } from 'path';
 import { RootModule } from './root.module';
 
 async function bootstrap() {
-  await CommandFactory.run(
-    RootModule.forRoot(join(__dirname, '..')),
-    new ConsoleLogger({
-      timestamp: true,
-      prefix: 'OpenAPI-Generator',
-      context: 'Root',
-    }),
-  );
+  await CommandFactory.run(RootModule.forRoot(join(__dirname, '..')));
 }
 
 bootstrap()

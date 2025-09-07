@@ -3,6 +3,7 @@ import { MethodBuilder } from '../core/utils/class-builder/method-builder';
 import { SchemaList } from '../schemas/schema-list';
 import { ApiConfig } from './@types/api-config';
 import { ClassRegistry } from './class-registry';
+import Logger from 'src/app/logger';
 
 export class Endpoint extends OpenApiClass {
   public readonly scope: string;
@@ -49,7 +50,7 @@ export class Endpoint extends OpenApiClass {
       else if (item.in === 'path') {
         path = path.replace(`{${item.name}}`, '${' + item.name + '}');
       } else {
-        console.log('Could not detect !');
+        Logger.log('Could not detect !');
       }
       this._methodObject.addInput(item.name, type, item.required);
     }
@@ -66,7 +67,7 @@ export class Endpoint extends OpenApiClass {
         outType = 'unknown';
       }
     } catch {
-      console.log('Warning !', `Response for ${this.path} is unknown !!`);
+      Logger.log('Warning !', `Response for ${this.path} is unknown !!`);
       this._methodObject.addOutputType('object');
       outType = 'object';
     }
@@ -94,7 +95,7 @@ export class Endpoint extends OpenApiClass {
       ClassRegistry.getInstance().saveClass(classObject);
       return classObject;
     } catch (e) {
-      console.log(this.info);
+      Logger.log(this.info);
       throw e;
     }
   }

@@ -45,7 +45,6 @@ export class GenerateCommand extends CommandRunner {
     try {
       await new OpenApi3(options.outDirectory, openApiJson).build();
     } catch (e) {
-      console.error(e);
       Logger.error(`Error generating SDK ${options.sdkName}. exiting...`);
       throw e;
     }

@@ -1,6 +1,6 @@
 {
   "name": "api-weaver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Weaving your APIs into TypeScript !",
   "author": "Aka-Amir",
   "private": false,

@@ -119,4 +119,4 @@ If you encounter any issues or have questions, please file an issue on the proje
 
 **Author:** Aka-Amir
 
-**Version:** 0.0.1
+**Version:** 0.0.3

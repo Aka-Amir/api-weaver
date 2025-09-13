@@ -37,6 +37,14 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
+"@api-weaver/core@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@api-weaver/core/-/core-0.0.1.tgz#103ca4e41e9a1e26cca65340c9d129f41039a200"
+  integrity sha512-IpuQVmGvZdiGD+xTH8ZgIu8+6lVFxDRDeyjjU4dekeh4kGbvGqvllVlLMzsZ5EdC9fsfQW9g7aD8v70VbQakTw==
+  dependencies:
+    "@types/node" "^24.3.3"
+    prettier "^3.6.2"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.27.1":
   version "7.27.1"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.27.1.tgz#200f715e66d52a23b221a9435534a91cc13ad5be"
@@ -1424,6 +1432,13 @@
   integrity sha512-rzSDyhn4cYznVG+PCzGe1lwuMYJrcBS1fc3JqSa2PvtABwWo+dZ1ij5OVok3tqfpEBCBoaR4d7upFJk73HRJDw==
   dependencies:
     undici-types "~6.21.0"
+
+"@types/node@^24.3.3":
+  version "24.3.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.3.3.tgz#6d195b95af3cda4e74dcef7bb3797a1941e7d2d1"
+  integrity sha512-GKBNHjoNw3Kra1Qg5UXttsY5kiWMEfoHq2TmXb+b1rcm6N7B3wTrFYIf/oSZ1xNQ+hVVijgLkiDZh7jRRsh+Gw==
+  dependencies:
+    undici-types "~7.10.0"
 
 "@types/qs@*":
   version "6.14.0"

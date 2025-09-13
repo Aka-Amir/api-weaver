@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import { Command, CommandRunner, Option } from 'nest-commander';
 import { join } from 'path';
-import { OpenApi3 } from '../../lib';
+import { ApiWeaver } from '@api-weaver/core';
 import Logger from '../logger';
 import { GenerationOptions } from '../types/options.type';
 
@@ -43,7 +43,7 @@ export class GenerateCommand extends CommandRunner {
     }
     Logger.log(`Generating SDK ${options.sdkName} ...`);
     try {
-      await new OpenApi3(options.outDirectory, openApiJson).build();
+      await new ApiWeaver(options.outDirectory, openApiJson).build();
     } catch (e) {
       Logger.error(`Error generating SDK ${options.sdkName}. exiting...`);
       throw e;
@@ -72,7 +72,8 @@ export class GenerateCommand extends CommandRunner {
   @Option({
     flags: '-n, --name [string]',
     name: 'sdkName',
-    required: true,
+    required: false,
+    defaultValue: 'AppSdk',
   })
   public sdkName(name: string) {
     return name;
